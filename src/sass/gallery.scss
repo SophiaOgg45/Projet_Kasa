@@ -1,30 +1,24 @@
 .gallery{
-    display: flex;
     width: 28%;
     height: 340px;
     cursor: pointer;
     position: relative;
-    margin-left: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
     img{  
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 15px;
-      
+      margin-left: 2.7rem;
+      margin-top: 2.7rem; 
     }
     h3{
-      
-      margin-top: 10px;
       position: absolute;
-      bottom: 1rem;
-      left: 0.7em;
+      bottom: -1rem;
+      left: 3em;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       margin: 0;
-      border-radius: 0px 0px 20px 20px;
-     
+      border-radius: 0px 0px 20px 20px;  
     }
   }

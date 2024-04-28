@@ -1,0 +1,38 @@
+.collapse {
+      margin:3rem;
+    .cardCollapse {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      background: #FF6060;
+      border-radius: 10px;
+    
+      h2 {
+        color: white; 
+      }
+     
+    }
+  
+    .chevron {
+      width: 30px;
+      height: 30px;
+      background-image: url('../assets/images/ArrowTop.png'); // Chemin de votre image de chevron
+      background-size: contain;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .chevron.open {
+      transform: rotate(-180deg);
+    }
+  
+    .content {
+        padding: 10px;
+        background-color: #F6F6F6;
+     
+       
+    }
+  }
+  
+  
