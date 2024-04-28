@@ -1,3 +1,26 @@
 .header{
-    color:aqua;
+    max-width: 1140px;
+	margin: auto;
+    display: flex;
+    // background: #FF6060;
+    justify-content: space-between;
+    nav{
+        ul {
+            display: flex;
+            a { 
+                color:black;
+                text-decoration: none;
+                &.underline {
+                    text-decoration: underline;
+                }
+            }
+            li{
+                margin: 0 1em;
+                list-style: none;
+                font-size: 1.5em;
+                
+            }
+        }
+    }
+
 }

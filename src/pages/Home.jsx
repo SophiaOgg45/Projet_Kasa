@@ -1,11 +1,16 @@
-
+import Banner from '../components/Banner';
+import Gallery from '../components/Gallery';
+import LogementImage from '../data/logementImage.json';
 const Home = () => {
     return (
-        <div>
-            <p>Accueil</p>
-            <p>A propos</p>
-            
+        <div className= "home"> 
+         <Banner />    
+         <div className= "Gallery">
+            <Gallery LogementImage= {LogementImage}/>
+     </div>
         </div>
+
+    
     );
 };
 
