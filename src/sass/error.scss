@@ -1,0 +1,23 @@
+.error {align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 139px;
+    margin: 100px auto;
+    width: 80%;
+    
+    img {height: 263px;
+         max-width: 597px;
+        }
+     p {
+        font-size: 36px;
+        text-align: center;
+        color: #FF6060;;
+       
+       }
+     a {
+       color: black;
+        font-size: 18px;
+        font-weight: 500;
+        
+       }
+   }
