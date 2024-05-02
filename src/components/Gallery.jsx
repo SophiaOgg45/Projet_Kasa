@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 const Gallery = ({ LogementImage }) => {
     return (
         LogementImage.map((img) => (
-            <div className="gallery" key={img.id}>
+            <Link to={`/logement/${img.id}`} className="gallery" key={img.id}>
                 <img src={img.cover} alt={img.title} />
                 <h3>{img.title}</h3>
-            </div>
+            </Link>
         ))
     );
 
