@@ -5,6 +5,8 @@
 @use "./sass/collapse";
 @use "./sass/error";
 @use "./sass/logement";
+@use "./sass/carousel";
+@use "./sass/rating";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 body {
     font-family: 'Montserrat', sans-serif;
@@ -14,6 +16,20 @@ body {
 .home, .header , .banner, .about, .logement {
     max-width: 1140px;
 	margin: auto;
+ 
+    .home-banner {
+        position: relative;
+    }
+    
+    .home-banner h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2.3rem;
+        padding-bottom: 1.5em;
+    }
 .Gallery {
     display: flex;
     flex-wrap:wrap;

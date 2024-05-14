@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import ArrowLeft from '../assets/images/ArrowLeft.png';
-import ArrowRight from '../assets/images/ArrowRight.png';
 import logementImage from "../data/logementImage.json";
+import Collapse from "../components/Collapse";
+import Carousel from "../components/Carousel";
+import Rating from "../components/Rating";
 
 const findLogementByID = (id) => {
     return logementImage.find((logement) => logement.id === id);
@@ -11,33 +11,56 @@ const findLogementByID = (id) => {
 const Logements = () => {
     const { id } = useParams();
     const logement = findLogementByID(id);
-    const pictures = logement.pictures;
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const goToPrevious = () => {
-        setCurrentIndex(currentIndex === 0 ? pictures.length - 1 : currentIndex - 1);
-    };
-
-    const goToNext = () => {
-        setCurrentIndex(currentIndex === pictures.length - 1 ? 0 : currentIndex + 1);
-    };
+    const description = logement.description;
+    const equipments = logement.equipments;
+    const tags = logement.tags;
+    const host = logement.host;
 
     return (
-
         <div className="logement">
-            <img src={pictures[currentIndex]} alt={logement.title} />
-            <div className="carousel-navigation">
-                <img src={ArrowLeft} alt="Previous" onClick={goToPrevious} />
-                <img src={ArrowRight} alt="Next" onClick={goToNext} />
+            <Carousel pictures={logement.pictures} title={logement.title} />
+            <div className="InfoLogement">
+                <div className='logement-host'>
+                    <p className="title">{logement.title}</p>
+                    <div className="host">
+                        <p>{host.name}</p>
+                        {host.picture && <img src={host.picture} alt="Portrait du propriétaire" />}
+                    </div>
+
+                </div>
+                <p className="location">{logement.location}</p>
+                <div className="tags-container">
+                    <div className="tags">
+                        {tags.map((tag, index) => (
+                            <span key={index} className="tag">{tag}</span>
+                        ))}
+                    </div>
+                    <div className="Rating">
+                        <Rating />
+                    </div>
+                </div>
+
+
             </div>
-            <div>
-                <p>Logement : {id}</p>
-                <p>Le titre du logement : {logement.title}</p>
-                <p>La description du logement : {logement.description}</p>
+            <div className="content">
+                <Collapse
+                    title="Description"
+                    content={<div className="description">{description}</div>}
+                />
+                <div className="space-between"></div>
+                <Collapse
+                    title="Equipements"
+                    content={
+                        <div className="equipment-list">
+                            {equipments.map((equipment, index) => (
+                                <div key={index} className="equipment">{equipment}</div>
+                            ))}
+                        </div>
+                    }
+                />
             </div>
         </div>
     );
 };
 
 export default Logements;
-

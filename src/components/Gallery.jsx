@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
-const Gallery = ({ LogementImage }) => {
+const Gallery = ({ logementImage }) => {
     return (
-        LogementImage.map((img) => (
+        logementImage.map((img) => (
             <Link to={`/logement/${img.id}`} className="gallery" key={img.id}>
                 <img src={img.cover} alt={img.title} />
                 <h3>{img.title}</h3>
@@ -11,8 +11,8 @@ const Gallery = ({ LogementImage }) => {
     );
 
 };
-Gallery.protoTypes = {
-    LogementImage: PropTypes.array.isRequired
+Gallery.propTypes = {
+    logementImage: PropTypes.array.isRequired
 };
 
 export default Gallery; 

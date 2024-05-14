@@ -6,9 +6,12 @@ import ImageHome from "../assets/images/ImageHome.png";
 const Home = () => {
     return (
         <div className="home"> 
-            <Banner image={ImageHome} alt="Vue sur la mer depuis la plage" />    
+        <div className="home-banner">
+            <Banner image={ImageHome} alt="Vue sur la mer depuis la plage" />
+            <h1>Chez vous, partout et ailleurs</h1> 
+            </div>   
             <div className="Gallery">
-                <Gallery LogementImage={LogementImage} />
+                <Gallery logementImage={LogementImage} />
             </div>
         </div>
     );
