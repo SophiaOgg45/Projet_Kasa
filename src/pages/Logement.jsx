@@ -1,8 +1,10 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import logementImage from "../data/logementImage.json";
 import Collapse from "../components/Collapse";
 import Carousel from "../components/Carousel";
 import Rating from "../components/Rating";
+import Error from "../pages/Error"; 
 
 const findLogementByID = (id) => {
     return logementImage.find((logement) => logement.id === id);
@@ -11,12 +13,19 @@ const findLogementByID = (id) => {
 const Logements = () => {
     const { id } = useParams();
     const logement = findLogementByID(id);
+
+    // Si l'ID de la location est différent/inexistant, on affiche la page d'erreur
+    if (!logement) {
+        return <Error />;
+    }
+
     const description = logement.description;
     const equipments = logement.equipments;
     const tags = logement.tags;
     const host = logement.host;
 
     return (
+        <section className="main-container">
         <div className="logement">
             <Carousel pictures={logement.pictures} title={logement.title} />
             <div className="InfoLogement">
@@ -26,7 +35,6 @@ const Logements = () => {
                         <p>{host.name}</p>
                         {host.picture && <img src={host.picture} alt="Portrait du propriétaire" />}
                     </div>
-
                 </div>
                 <p className="location">{logement.location}</p>
                 <div className="tags-container">
@@ -39,8 +47,6 @@ const Logements = () => {
                         <Rating />
                     </div>
                 </div>
-
-
             </div>
             <div className="content">
                 <Collapse
@@ -60,7 +66,10 @@ const Logements = () => {
                 />
             </div>
         </div>
+        </section>
     );
 };
 
 export default Logements;
+
+

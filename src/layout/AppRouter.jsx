@@ -8,7 +8,7 @@ import PageLayout from "../layout/PageLayout";
 export default function AppRouter() {
   return (
     <BrowserRouter>
-
+ <main> 
       <Routes>
         <Route path="/" element={<PageLayout />} >
           <Route path="/" element={<Home />} />
@@ -18,7 +18,7 @@ export default function AppRouter() {
 
         </Route>
       </Routes>
-
+</main>
     </BrowserRouter>
   );
 }

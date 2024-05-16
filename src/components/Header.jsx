@@ -3,6 +3,7 @@ import LOGO from "../assets/images/LOGO.png"
 
 const Header = () => {
     return (
+        <section className="main-container">
         <div className="header">
             <img src={LOGO} alt="logo kasa" />
             <nav>
@@ -16,7 +17,9 @@ const Header = () => {
                 </ul>
             </nav>
         </div>
+        </section>
     );
 };
 
 export default Header; 
+

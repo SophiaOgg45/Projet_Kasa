@@ -4,9 +4,10 @@ import Collapse from "../components/Collapse";
 
 const About = () => {
   return (
+    <section className="main-container">
     <div className="about">
       <Banner image={ImageAbout} alt="Vue sur les montagnes" />
-      <section className="content">
+      <section className="content-about">
         <Collapse
           title="Fiabilité"
           content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, 
@@ -31,7 +32,9 @@ const About = () => {
         />
       </section>
     </div>
+    </section>
   );
 };
 
 export default About;
+

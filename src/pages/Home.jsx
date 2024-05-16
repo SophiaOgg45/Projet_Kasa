@@ -5,16 +5,19 @@ import ImageHome from "../assets/images/ImageHome.png";
 
 const Home = () => {
     return (
-        <div className="home"> 
-        <div className="home-banner">
-            <Banner image={ImageHome} alt="Vue sur la mer depuis la plage" />
-            <h1>Chez vous, partout et ailleurs</h1> 
-            </div>   
+        <section className="main-container">
+        <div className="home">
+            <div className="home-banner">
+                <Banner image={ImageHome} alt="Vue sur la mer depuis la plage" />
+                <h1>Chez vous, partout et ailleurs</h1>
+            </div>
             <div className="Gallery">
                 <Gallery logementImage={LogementImage} />
             </div>
         </div>
+        </section>
     );
 };
 
 export default Home;
+

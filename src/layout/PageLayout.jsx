@@ -5,11 +5,8 @@ import Footer from "../components/Footer";
 export default function PageLayout() {
     return (
         <>
-            <Header />
-
-            < Outlet />
-
-
+            <Header />          
+                <Outlet />
             <Footer />
         </>
     );
