@@ -1,4 +1,3 @@
-
 const Banner = ({ image, alt }) => {
     return (
         <div className="banner">

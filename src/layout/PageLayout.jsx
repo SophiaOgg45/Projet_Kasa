@@ -4,10 +4,10 @@ import Footer from "../components/Footer";
 
 export default function PageLayout() {
     return (
-        <>
+        <main>
             <Header />          
                 <Outlet />
             <Footer />
-        </>
+        </main>
     );
 }

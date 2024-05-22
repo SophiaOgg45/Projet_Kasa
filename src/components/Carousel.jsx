@@ -14,14 +14,18 @@ const Carousel = ({ pictures, title }) => {
     };
 
     return (
-        <div className="carousel-container"> 
+        <div className="carousel-container">
             <div className="carousel-navigation">
                 <img src={ArrowLeft} alt="Previous" onClick={goToPrevious} />
                 <img src={ArrowRight} alt="Next" onClick={goToNext} />
             </div>
             <img src={pictures[currentIndex]} alt={title} />
+            <div className="carousel-counter">
+                {currentIndex + 1}/{pictures.length}
+            </div>
         </div>
     );
 };
 
 export default Carousel;
+
