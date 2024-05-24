@@ -40,7 +40,7 @@
 .Gallery {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 6rem;
+    padding: 2rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
     border-radius: 20px;
@@ -48,6 +48,7 @@
     height: 100%;
     background-color: #F6F6F6;
     gap: 3rem;
+    
 }
 
 //Responsive Mobile
@@ -64,7 +65,7 @@
 
     .header {
         img {
-            width: 145px;
+            width: 140px;
             height: 46px;
             object-fit: cover;
         }
@@ -104,9 +105,19 @@
         margin-bottom: 2em;
         padding: 0;
 
+        .gallery{
+            margin: 0;
+            
+        }
+        .gallery::after {
+         
+            width: 100%;
+            height: 0%;
+      
+        }
         .gallery img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             margin: 0;
             margin-top: 2em;
             margin-bottom: 1em;
@@ -114,10 +125,11 @@
 
         .gallery h3 {
 
-            bottom: 2em;
-            left: 1em;
-            width: 60%;
-            font-size: large;
+            top: -3em;
+            left: 0.5em;
+            font-size: 15px;
+            
+          
         }
     }
 
@@ -150,10 +162,7 @@
 
                     height: 45px;
 
-                    h2 {
-                        font-size: large;
-
-                    }
+                   
                 }
             }
         }
